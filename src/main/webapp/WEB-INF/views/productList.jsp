@@ -11,7 +11,6 @@
         </div>
 
         <table class="table table-striped table-hover">
-            <thead>
             <tr class="bg-success">
                 <th>Photp Thumb</th>
                 <th>Product Name</th>
@@ -20,10 +19,10 @@
                 <th>Price</th>
                 <th></th>
             </tr>
-            </thead>
             <c:forEach items="${products}" var="product">
             <tr>
-                <td><img src="#" alt="image" />></td>
+                <td><img src="<c:url value="/resources/images/${product.productId}.png "/> "
+                         alt="image" style="width: 100%"/>></td>
                 <td>${product.productName}</td>
                 <td>${product.productCategory}</td>
                 <td>${product.productCondition}</td>

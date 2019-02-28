@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="eMusicStore:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/eMusicStore_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/src/main/webapp</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="eMusicStore/web/Web" />
       <element id="directory" name="WEB-INF">
@@ -36,6 +36,8 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.1.4.RELEASE" />
           <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
           <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.2.2" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.4" />
         </element>
       </element>
     </root>

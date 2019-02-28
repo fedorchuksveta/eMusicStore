@@ -11,7 +11,8 @@
         </div>
 
         <%--@elvariable id="product" type=""--%>
-        <form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post" commandName="product">
+        <form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct" method="post"
+                   commandName="product" enctype="multipart/form-data">
         <div class="form-group">
             <label for="name">Name</label>
             <form:input path="productName" id="name" class="form-Control" />
@@ -73,6 +74,10 @@
             <form:input path="productManufacture" id="manufacture" class="form-Control" />
         </div>
 
+        <div class="form-group">
+            <label class="control-label" for="productImage">Upload Picture</label>
+            <form:input id="productImage" path="productImage" type="file" class="form:input-large" />
+        </div>
         <br><br>
         <input type="submit" value="submit" class="btn btn-default">
         <a href="<c:url value="/admin/productInventory" />" class="btn btn-default">Cancel</a>
