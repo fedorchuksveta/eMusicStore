@@ -16,7 +16,7 @@ public class BillingAddress implements Serializable {
     @GeneratedValue
     private int billingAddressId;
     private String streetName;
-    private String aparmentNumber;
+    private String apartmentNumber;
     private String city;
     private String state;
     private String country;
@@ -42,11 +42,11 @@ public class BillingAddress implements Serializable {
     }
 
     public String getAparmentNumber() {
-        return aparmentNumber;
+        return apartmentNumber;
     }
 
-    public void setAparmentNumber(String aparmentNumber) {
-        this.aparmentNumber = aparmentNumber;
+    public void setAparmentNumber(String apartmentNumber) {
+        this.apartmentNumber = apartmentNumber;
     }
 
     public String getCity() {
@@ -93,7 +93,7 @@ public class BillingAddress implements Serializable {
     public String toString() {
         return "BillingAddress{" +
                 "streetName='" + streetName + '\'' +
-                ", aparmentNumber='" + aparmentNumber + '\'' +
+                ", aparmentNumber='" + apartmentNumber + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", country='" + country + '\'' +
