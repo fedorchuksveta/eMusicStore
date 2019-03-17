@@ -7,37 +7,35 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Customer implements Serializable {
+public class Customer implements Serializable{
 
 
-    private static final long serialVersionUID = 5140900014886997914L;
-
+    private static final long serialVersionUID = -7386191638126414072L;
     @Id
     @GeneratedValue
     private int customerId;
 
-    @NotEmpty(message = "The customer name must not be null.")
+    @NotEmpty (message = "The customer name must not be null.")
     private String customerName;
 
-    @NotEmpty(message = "The customer email must not be null.")
+    @NotEmpty (message = "The customer email must not be null.")
     private String customerEmail;
     private String customerPhone;
 
-    @NotEmpty(message = "The customer username must not be null.")
+    @NotEmpty (message = "The customer username must not be null.")
     private String username;
 
-    @NotEmpty(message = "The customer password must not be null.")
+    @NotEmpty (message = "The customer password must not be null.")
     private String password;
-
 
     private boolean enabled;
 
     @OneToOne
-    @JoinColumn(name = "billingAddressId")
+    @JoinColumn(name="billingAddressId")
     private BillingAddress billingAddress;
 
     @OneToOne
-    @JoinColumn(name = "shippingAddressId")
+    @JoinColumn(name="shippingAddressId")
     private ShippingAddress shippingAddress;
 
     @OneToOne

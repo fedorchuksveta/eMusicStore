@@ -12,7 +12,7 @@
 
         <table class="table table-striped table-hover">
             <tr class="bg-success">
-                <th>Photp Thumb</th>
+                <th>Photo Thumb</th>
                 <th>Product Name</th>
                 <th>Category</th>
                 <th>Condition</th>

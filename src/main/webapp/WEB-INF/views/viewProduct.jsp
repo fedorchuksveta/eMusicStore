@@ -22,7 +22,7 @@
                     <h3>${product.productName}</h3>
                     <p>${product.productDescription}</p>
                     <p>
-                        <strong>Manufacturer</strong> : ${product.productManufacture}
+                        <strong>Manufacturer</strong> : ${product.productManufacturer}
                     </p>
                     <p>
                         <strong>Category</strong> : ${product.productCategory}

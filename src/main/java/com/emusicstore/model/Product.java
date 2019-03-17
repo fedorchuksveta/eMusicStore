@@ -5,37 +5,39 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Product implements Serializable {
+public class Product implements Serializable{
 
-
-    private static final long serialVersionUID = -1820679211800309029L;
-
+    private static final long serialVersionUID = -3555607302536610018L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int productId;
 
-    @NotEmpty(message = "The product name must not be null.")
+    @NotEmpty (message = "The product name must not be null.")
+
     private String productName;
     private String productCategory;
     private String productDescription;
 
-    @Min(value = 0, message = "The product price must no be less than zero.")
+    @Min(value = 0, message = "The product price must no be less then zero.")
     private double productPrice;
     private String productCondition;
     private String productStatus;
 
     @Min(value = 0, message = "The product unit must not be less than zero.")
     private int unitInStock;
-    private String productManufacture;
+    private String productManufacturer;
 
     @Transient
     private MultipartFile productImage;
+
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonIgnore
@@ -105,12 +107,12 @@ public class Product implements Serializable {
         this.unitInStock = unitInStock;
     }
 
-    public String getProductManufacture() {
-        return productManufacture;
+    public String getProductManufacturer() {
+        return productManufacturer;
     }
 
-    public void setProductManufacture(String productManufacture) {
-        this.productManufacture = productManufacture;
+    public void setProductManufacturer(String productManufacturer) {
+        this.productManufacturer = productManufacturer;
     }
 
     public MultipartFile getProductImage() {
@@ -120,6 +122,7 @@ public class Product implements Serializable {
     public void setProductImage(MultipartFile productImage) {
         this.productImage = productImage;
     }
+
 
     public List<CartItem> getCartItemList() {
         return cartItemList;

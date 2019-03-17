@@ -6,11 +6,10 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class CartItem implements Serializable {
+public class CartItem implements Serializable{
 
 
-    private static final long serialVersionUID = -904360230041854157L;
-
+    private static final long serialVersionUID = 8171620476080463677L;
     @Id
     @GeneratedValue
     private int cartItemId;
@@ -66,5 +65,4 @@ public class CartItem implements Serializable {
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
-
 }

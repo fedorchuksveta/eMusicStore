@@ -6,24 +6,25 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import java.io.Serializable;
 
+
 @Entity
-public class ShippingAddress implements Serializable {
+public class ShippingAddress implements Serializable{
 
 
-    private static final long serialVersionUID = 989191150380037359L;
+    private static final long serialVersionUID = -7489975147114871359L;
 
     @Id
     @GeneratedValue
     private int shippingAddressId;
     private String streetName;
-    private String aparmentNumber;
+    private String apartmentNumber;
     private String city;
     private String state;
     private String country;
     private String zipCode;
 
-    @OneToOne
-    private Customer customer;
+//    @OneToOne
+//    private Customer customer;
 
     public int getShippingAddressId() {
         return shippingAddressId;
@@ -41,12 +42,12 @@ public class ShippingAddress implements Serializable {
         this.streetName = streetName;
     }
 
-    public String getAparmentNumber() {
-        return aparmentNumber;
+    public String getApartmentNumber() {
+        return apartmentNumber;
     }
 
-    public void setAparmentNumber(String aparmentNumber) {
-        this.aparmentNumber = aparmentNumber;
+    public void setApartmentNumber(String apartmentNumber) {
+        this.apartmentNumber = apartmentNumber;
     }
 
     public String getCity() {
@@ -81,19 +82,19 @@ public class ShippingAddress implements Serializable {
         this.zipCode = zipCode;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+//    public Customer getCustomer() {
+//        return customer;
+//    }
+//
+//    public void setCustomer(Customer customer) {
+//        this.customer = customer;
+//    }
 
     @Override
     public String toString() {
         return "ShippingAddress{" +
                 "streetName='" + streetName + '\'' +
-                ", aparmentNumber='" + aparmentNumber + '\'' +
+                ", apartmentNumber='" + apartmentNumber + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", country='" + country + '\'' +

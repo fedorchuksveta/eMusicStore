@@ -33,7 +33,7 @@
 
 
         <div class="form-group">
-            <label for="description">Descroption</label>
+            <label for="description">Description</label>
             <form:textarea path="productDescription" id="description" class="form-Control" />
         </div>
 

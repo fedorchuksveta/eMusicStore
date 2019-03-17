@@ -5,9 +5,13 @@ import com.emusicstore.model.Customer;
 import java.util.List;
 
 public interface CustomerDao {
+
     void addCustomer (Customer customer);
 
-    Customer getCustomerById(int customerId);
+    Customer getCustomerById (int customerId);
 
-    List<Customer> getAllCustomer();
+    List<Customer> getAllCustomers();
+
+    Customer getCustomerByUsername (String username);
+
 }

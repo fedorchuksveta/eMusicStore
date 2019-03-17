@@ -7,10 +7,11 @@ import javax.persistence.OneToOne;
 import java.io.Serializable;
 
 @Entity
-public class BillingAddress implements Serializable {
+public class BillingAddress implements Serializable{
 
 
-    private static final long serialVersionUID = -6091579459463730482L;
+    private static final long serialVersionUID = -6884713484505763453L;
+
 
     @Id
     @GeneratedValue
@@ -22,8 +23,8 @@ public class BillingAddress implements Serializable {
     private String country;
     private String zipCode;
 
-    @OneToOne
-    private Customer customer;
+//    @OneToOne
+//    private Customer customer;
 
     public int getBillingAddressId() {
         return billingAddressId;
@@ -41,11 +42,11 @@ public class BillingAddress implements Serializable {
         this.streetName = streetName;
     }
 
-    public String getAparmentNumber() {
+    public String getApartmentNumber() {
         return apartmentNumber;
     }
 
-    public void setAparmentNumber(String apartmentNumber) {
+    public void setApartmentNumber(String apartmentNumber) {
         this.apartmentNumber = apartmentNumber;
     }
 
@@ -81,19 +82,19 @@ public class BillingAddress implements Serializable {
         this.zipCode = zipCode;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+//    public Customer getCustomer() {
+//        return customer;
+//    }
+//
+//    public void setCustomer(Customer customer) {
+//        this.customer = customer;
+//    }
 
     @Override
     public String toString() {
         return "BillingAddress{" +
                 "streetName='" + streetName + '\'' +
-                ", aparmentNumber='" + apartmentNumber + '\'' +
+                ", apartmentNumber='" + apartmentNumber + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", country='" + country + '\'' +

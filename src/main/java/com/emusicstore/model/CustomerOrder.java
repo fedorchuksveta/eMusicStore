@@ -3,30 +3,30 @@ package com.emusicstore.model;
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Entity
-public class CustomerOrder implements Serializable {
 
-    private static final long serialVersionUID = 2983360377227484514L;
+@Entity
+public class CustomerOrder implements Serializable{
+
+    private static final long serialVersionUID = -6560428165431284818L;
 
     @Id
     @GeneratedValue
     private int customerOrderId;
 
-
     @OneToOne
     @JoinColumn(name = "cartId")
     private Cart cart;
 
-    @OneToOne
-    @JoinColumn(name = "customerId")
-    private Customer customer;
+//    @OneToOne
+//    @JoinColumn(name = "customerId")
+//    private Customer customer;
 
     @OneToOne
     @JoinColumn(name = "billingAddressId")
     private BillingAddress billingAddress;
 
     @OneToOne
-    @JoinColumn(name = "shippingddressId")
+    @JoinColumn(name="shippingAddressId")
     private ShippingAddress shippingAddress;
 
     public int getCustomerOrderId() {
@@ -45,13 +45,13 @@ public class CustomerOrder implements Serializable {
         this.cart = cart;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+//    public Customer getCustomer() {
+//        return customer;
+//    }
+//
+//    public void setCustomer(Customer customer) {
+//        this.customer = customer;
+//    }
 
     public BillingAddress getBillingAddress() {
         return billingAddress;

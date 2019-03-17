@@ -1,6 +1,5 @@
 package com.emusicstore.controller.admin;
 
-
 import com.emusicstore.model.Product;
 import com.emusicstore.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.naming.Binding;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.io.File;
@@ -22,7 +22,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 @Controller
-@RequestMapping("admin")
+@RequestMapping("/admin")
 public class AdminProduct {
 
     private Path path;
@@ -42,24 +42,25 @@ public class AdminProduct {
         return "addProduct";
     }
 
-    @RequestMapping(value = "/product/addProduct", method = RequestMethod.POST)
+    @RequestMapping(value="/product/addProduct", method = RequestMethod.POST)
     public String addProductPost(@Valid @ModelAttribute("product") Product product, BindingResult result,
                                  HttpServletRequest request) {
-        if (result.hasErrors()) {
+        if(result.hasErrors()) {
             return "addProduct";
         }
 
         productService.addProduct(product);
-        MultipartFile productImage = product.getProductImage();
-        String rootDirectiry = request.getSession().getServletContext().getRealPath("/");
-        path = Paths.get(rootDirectiry + "\\WEB-INF\\resources\\" + product.getProductId() + ".png");
 
-        if (productImage != null && !productImage.isEmpty()){
+        MultipartFile productImage = product.getProductImage();
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\"+product.getProductId()+".png");
+
+        if (productImage != null && !productImage.isEmpty()) {
             try {
                 productImage.transferTo(new File(path.toString()));
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
-                throw  new RuntimeException("Product image saving failed", e);
+                throw new RuntimeException("Product image saving failed.", e);
             }
         }
 
@@ -67,51 +68,48 @@ public class AdminProduct {
     }
 
     @RequestMapping("/product/editProduct/{id}")
-    public String editProduct(@PathVariable int id, Model model) {
+    public String editProduct(@PathVariable("id") int id, Model model) {
         Product product = productService.getProductById(id);
-
 
         model.addAttribute("product", product);
 
         return "editProduct";
     }
 
-    @RequestMapping(value = "/product/editProduct", method = RequestMethod.POST)
+    @RequestMapping(value="/product/editProduct", method = RequestMethod.POST)
     public String editProductPost(@Valid @ModelAttribute("product") Product product, BindingResult result,
-                                 HttpServletRequest request) {
-        if (result.hasErrors()) {
+                                  HttpServletRequest request) {
+        if(result.hasErrors()) {
             return "editProduct";
         }
 
-
         MultipartFile productImage = product.getProductImage();
-        String rootDirectiry = request.getSession().getServletContext().getRealPath("/");
-        path = Paths.get(rootDirectiry + "\\WEB-INF\\resources\\" + product.getProductId() + ".png");
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\"+product.getProductId()+".png");
 
-        if (productImage != null && !productImage.isEmpty()){
+        if (productImage != null && !productImage.isEmpty()) {
             try {
                 productImage.transferTo(new File(path.toString()));
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
-                throw  new RuntimeException("Product image saving failed", e);
+                throw new RuntimeException("Product image saving failed.", e);
             }
         }
 
-        productService.addProduct(product);
+        productService.editProduct(product);
 
         return "redirect:/admin/productInventory";
     }
 
-
     @RequestMapping("/product/deleteProduct/{id}")
-    public String deleteProduct(@PathVariable int id, Model model, HttpServletRequest request){
+    public String deleteProduct(@PathVariable int id, Model model, HttpServletRequest request) {
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images" + id + ".png");
+        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\" + id + ".png");
 
-        if(Files.exists(path)){
-            try{
+        if (Files.exists(path)) {
+            try {
                 Files.delete(path);
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -120,8 +118,5 @@ public class AdminProduct {
         productService.deleteProduct(product);
 
         return "redirect:/admin/productInventory";
-
     }
-
-
 }
