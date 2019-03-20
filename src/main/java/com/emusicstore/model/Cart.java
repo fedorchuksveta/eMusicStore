@@ -18,10 +18,10 @@ public class Cart implements Serializable {
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<CartItem> cartItems;
 
-//    @OneToOne
-//    @JoinColumn(name = "customerId")
-//    @JsonIgnore
-//    private Customer customer;
+    @OneToOne
+    @JoinColumn(name = "customerId")
+    @JsonIgnore
+    private Customer customer;
 
     private double grandTotal;
 
@@ -41,13 +41,13 @@ public class Cart implements Serializable {
         this.cartItems = cartItems;
     }
 
-//    public Customer getCustomer() {
-//        return customer;
-//    }
-//
-//    public void setCustomer(Customer customer) {
-//        this.customer = customer;
-//    }
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     public double getGrandTotal() {
         return grandTotal;
@@ -56,4 +56,6 @@ public class Cart implements Serializable {
     public void setGrandTotal(double grandTotal) {
         this.grandTotal = grandTotal;
     }
+
+
 }

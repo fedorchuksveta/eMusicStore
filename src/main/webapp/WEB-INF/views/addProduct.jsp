@@ -70,8 +70,8 @@
         </div>
 
         <div class="form-group">
-            <label for="manufacture">Manufacture</label>
-            <form:input path="productManufacture" id="manufacture" class="form-Control" />
+            <label for="manufacturer">Manufacturer</label>
+            <form:input path="productManufacturer" id="manufacturer" class="form-Control" />
         </div>
 
         <div class="form-group">

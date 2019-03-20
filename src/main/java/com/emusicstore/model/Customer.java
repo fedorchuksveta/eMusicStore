@@ -11,6 +11,7 @@ public class Customer implements Serializable{
 
 
     private static final long serialVersionUID = -7386191638126414072L;
+
     @Id
     @GeneratedValue
     private int customerId;
