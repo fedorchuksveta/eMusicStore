@@ -1,5 +1,5 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@include file="/WEB-INF/views/template/header.jsp"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@include file="/WEB-INF/views/template/header.jsp" %>
 
 <!-- Carousel
 ================================================== -->
@@ -12,17 +12,19 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img class="first-slide home-image" src="<c:url value="/resources/images/100704083901_20.jpg"></c:url> " alt="First slide">
+            <img class="first-slide home-image" src="<c:url value="/resources/images/100704083901_20.jpg"></c:url> "
+                 alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Welcome to Le's Music Store</h1>
                     <p>Here you can brows and buy Instruments, Records and music related Accessories. Order Now for
-                    Your Amazing New Kit!</p>
+                        Your Amazing New Kit!</p>
                 </div>
             </div>
         </div>
         <div class="item">
-            <img class="second-slide home-image" src="<c:url value="/resources/images/maxresdefault.jpg"></c:url>" alt="Second slide">
+            <img class="second-slide home-image" src="<c:url value="/resources/images/maxresdefault.jpg"></c:url>"
+                 alt="Second slide">
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Facts You Should Know About Music</h1>
@@ -32,10 +34,11 @@
             </div>
         </div>
         <div class="item">
-            <img class="third-slide home-image" src="<c:url value="/resources/images/muzika.jpg"></c:url>" alt="Third slide">
+            <img class="third-slide home-image" src="<c:url value="/resources/images/muzika.jpg"></c:url>"
+                 alt="Third slide">
             <div class="container">
                 <div class="carousel-caption">
-                   <h1>It's S Jazz Affair</h1>
+                    <h1>It's S Jazz Affair</h1>
 
                     <p>Through ups and downs, Somehow I manage to survive in life.</p>
                     <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
@@ -51,7 +54,8 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div><!-- /.carousel -->
+</div>
+<!-- /.carousel -->
 
 
 <!-- Marketing messaging and featurettes
@@ -63,26 +67,44 @@
     <!-- Three columns of text below the carousel -->
     <div class="row">
         <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Instrument" />"
+               role="button">
+                <img class="img-circle" src="<c:url value="/resources/images/foto1.jpg" />" alt="Instrument
+               Image" width="140" height="140"></a>
+
+            <h2>Instrument</h2>
+            <p>Well crafted and delicate instruments.</p>
+
         </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-            <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
 
 
+        <div class="row">
+            <div class="col-lg-4">
+                <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Accessory" />"
+                   role="button">
+                    <img class="img-circle" src="<c:url value="/resources/images/foto3.jpg" />" alt="Instrument
+               Image" width="140" height="140"></a>
+
+                <h2>Accessories</h2>
+                <p>All musical and related geeky goods.</p>
+
+            </div><!-- /.col-lg-4 -->
 
 
-    <%@include file="/WEB-INF/views/template/footer.jsp"%>
+            <div class="row">
+                <div class="col-lg-4">
+                    <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Record" />"
+                       role="button">
+                        <img class="img-circle" src="<c:url value="/resources/images/foto2.jpg" />" alt="Instrument
+               Image" width="140" height="140"></a>
+
+                    <h2>Discography</h2>
+                    <p>An exceptional collections of music records in favor of the traditional and modern genre of jazz.
+
+                    </p></div><!-- /.col-lg-4 -->
+
+
+            </div><!-- /.row -->
+
+
+            <%@include file="/WEB-INF/views/template/footer.jsp" %>

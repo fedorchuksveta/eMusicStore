@@ -18,12 +18,13 @@
 
 
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Name</label><form:errors path="customerName" cssStyle="color: #ff0000"/>
             <form:input path="customerName" id="name" class="form-Control" />
         </div>
 
         <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">Email</label><span style="color: #ff0000">${emailMsg}</span><form:errors
+                path="customerEmail" cssStyle="color: #ff0000"/>
             <form:input path="customerEmail" id="email" class="form-Control" />
         </div>
 
@@ -33,12 +34,13 @@
         </div>
 
         <div class="form-group">
-            <label for="userName">UserName</label>
+            <label for="userName">UserName</label><span style="color: #ff0000">${usernameMsg}</span><form:errors
+                    path="username" cssStyle="color: #ff0000"/>
             <form:input path="username" id="userName" class="form-Control" />
         </div>
 
         <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Password</label><form:errors path="password" cssStyle="color: #ff0000"/>
             <form:password path="password" id="password" class="form-Control" />
         </div>
 
@@ -51,7 +53,7 @@
 
         <div class="form-group">
             <label for="billingApartmentNumber">Apartment Number</label>
-            <form:input path="billingAddress.aparmentNumber" id="billingApartmentNumber" class="form-Control" />
+            <form:input path="billingAddress.apartmentNumber" id="billingApartmentNumber" class="form-Control" />
         </div>
 
         <div class="form-group">
@@ -83,7 +85,7 @@
 
         <div class="form-group">
             <label for="shippingApartmentNumber">Apartment Number</label>
-            <form:input path="shippingAddress.aparmentNumber" id="shippingApartmentNumber" class="form-Control" />
+            <form:input path="shippingAddress.apartmentNumber" id="shippingApartmentNumber" class="form-Control" />
         </div>
 
         <div class="form-group">
