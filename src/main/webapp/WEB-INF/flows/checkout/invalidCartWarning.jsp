@@ -7,7 +7,6 @@
             <div class="jumbotron">
                 <div class="container">
                     <h1>Invalid Cart</h1>
-
                 </div>
             </div>
         </section>
@@ -20,6 +19,5 @@
 
     </div>
 </div>
-
 
 <%@include file="/WEB-INF/views/template/footer.jsp" %>

@@ -8,7 +8,6 @@ import java.io.Serializable;
 @Entity
 public class CartItem implements Serializable{
 
-
     private static final long serialVersionUID = 8171620476080463677L;
     @Id
     @GeneratedValue

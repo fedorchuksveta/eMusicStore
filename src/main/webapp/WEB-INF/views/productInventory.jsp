@@ -3,10 +3,10 @@
 <%@include file="/WEB-INF/views/template/header.jsp"%>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function(){
 
         $('.table').DataTable({
-            "lengthMenu":[[1, 2 , 3 ,5 ,10, -1], [1, 2, 3, 5, 10, "All"]]
+            "lengthMenu": [[1,2,3,5,10,-1], [1,2,3,5,10, "All"]]
         });
     });
 

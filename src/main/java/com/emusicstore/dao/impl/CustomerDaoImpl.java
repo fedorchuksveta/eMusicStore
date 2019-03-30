@@ -24,8 +24,8 @@ public class CustomerDaoImpl implements CustomerDao{
     public void addCustomer(Customer customer) {
         Session session = sessionFactory.getCurrentSession();
 
-//        customer.getBillingAddress().setCustomer(customer);
-//        customer.getShippingAddress().setCustomer(customer);
+        customer.getBillingAddress().setCustomer(customer);
+        customer.getShippingAddress().setCustomer(customer);
 
         session.saveOrUpdate(customer);
         session.saveOrUpdate(customer.getBillingAddress());
@@ -35,7 +35,7 @@ public class CustomerDaoImpl implements CustomerDao{
         newUser.setUsername(customer.getUsername());
         newUser.setPassword(customer.getPassword());
         newUser.setEnabled(true);
-        newUser.setCustomerId(customer.getCustomerId());
+//        newUser.setCustomerId(customer.getCustomerId());
 
         Authorities newAuthority = new Authorities();
         newAuthority.setUsername(customer.getUsername());
@@ -44,7 +44,7 @@ public class CustomerDaoImpl implements CustomerDao{
         session.saveOrUpdate(newAuthority);
 
         Cart newCart = new Cart();
-//        newCart.setCustomer(customer);
+        newCart.setCustomer(customer);
         customer.setCart(newCart);
         session.saveOrUpdate(customer);
         session.saveOrUpdate(newCart);

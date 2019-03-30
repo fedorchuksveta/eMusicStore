@@ -1,6 +1,5 @@
 package com.emusicstore.dao.impl;
 
-
 import com.emusicstore.dao.CartItemDao;
 import com.emusicstore.model.Cart;
 import com.emusicstore.model.CartItem;
@@ -48,6 +47,5 @@ public class CartItemDaoImpl implements CartItemDao {
         session.flush();
 
         return (CartItem) query.uniqueResult();
-
     }
 }

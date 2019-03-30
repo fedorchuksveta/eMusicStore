@@ -9,19 +9,17 @@
                     <h1>Thank you for your business!</h1>
 
                     <p>Your order will be shipped in two business days!</p>
-
                 </div>
             </div>
         </section>
 
         <section class="container">
             <p>
-                <a href="<spring:url value="/" />" class="btn btn-default">Ok</a>
+                <a href="<spring:url value="/" />" class="btn btn-default">OK</a>
             </p>
         </section>
 
     </div>
 </div>
-
 
 <%@include file="/WEB-INF/views/template/footer.jsp" %>

@@ -1,9 +1,6 @@
 package com.emusicstore.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.io.Serializable;
 
 
@@ -23,8 +20,9 @@ public class ShippingAddress implements Serializable{
     private String country;
     private String zipCode;
 
-//    @OneToOne
-//    private Customer customer;
+    @OneToOne
+    @JoinColumn(name = "customerId")
+    private Customer customer;
 
     public int getShippingAddressId() {
         return shippingAddressId;
@@ -82,13 +80,13 @@ public class ShippingAddress implements Serializable{
         this.zipCode = zipCode;
     }
 
-//    public Customer getCustomer() {
-//        return customer;
-//    }
-//
-//    public void setCustomer(Customer customer) {
-//        this.customer = customer;
-//    }
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     @Override
     public String toString() {

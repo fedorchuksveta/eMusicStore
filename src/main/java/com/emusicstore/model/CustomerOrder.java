@@ -68,6 +68,4 @@ public class CustomerOrder implements Serializable{
     public void setShippingAddress(ShippingAddress shippingAddress) {
         this.shippingAddress = shippingAddress;
     }
-
-
 }

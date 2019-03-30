@@ -10,12 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional
-public class CustomerOrderDaoImpl implements CustomerOrderDao {
+public class CustomerOrderDaoImpl implements CustomerOrderDao{
 
     @Autowired
     private SessionFactory sessionFactory;
 
-    public void addCustomerOrder(CustomerOrder customerOrder){
+    public void addCustomerOrder(CustomerOrder customerOrder) {
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(customerOrder);
         session.flush();

@@ -20,12 +20,12 @@
     <title>My Music Store</title>
 
     <!-- Angular JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js" > </script>
 
-    <!-- Jquery -->
+    <%--Jquery--%>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-    <!-- Data Table -->
+    <%--Data Table--%>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 
     <!-- Bootstrap core CSS -->
@@ -37,7 +37,7 @@
     <!-- Main CSS -->
     <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
 
-    <link href="https://cdn.datatebles.net/1.10.10/js/jquery.dataTables.min.js" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css" rel="stylesheet">
 
 
 </head>

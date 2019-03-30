@@ -1,6 +1,5 @@
 package com.emusicstore.controller;
 
-
 import com.emusicstore.model.Cart;
 import com.emusicstore.model.CartItem;
 import com.emusicstore.model.Customer;
@@ -33,7 +32,6 @@ public class CartResources {
 
     @Autowired
     private ProductService productService;
-
 
     @RequestMapping("/{cartId}")
     public @ResponseBody
@@ -69,7 +67,7 @@ public class CartResources {
         cartItemService.addCartItem(cartItem);
     }
 
-    @RequestMapping(value = "/remove/{productid}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/remove/{productId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void removeItem(@PathVariable(value = "productId") int productId){
         CartItem cartItem = cartItemService.getCartItemByProductId(productId);

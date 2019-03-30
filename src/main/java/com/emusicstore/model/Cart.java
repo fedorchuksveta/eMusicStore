@@ -9,8 +9,8 @@ import java.util.List;
 @Entity
 public class Cart implements Serializable {
 
-
     private static final long serialVersionUID = 2240730772334882506L;
+
     @Id
     @GeneratedValue
     private int cartId;
@@ -56,6 +56,4 @@ public class Cart implements Serializable {
     public void setGrandTotal(double grandTotal) {
         this.grandTotal = grandTotal;
     }
-
-
 }

@@ -1,4 +1,3 @@
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@include file="/WEB-INF/views/template/header.jsp" %>
 
 <!-- Carousel
@@ -14,34 +13,40 @@
         <div class="item active">
             <img class="first-slide home-image" src="<c:url value="/resources/images/100704083901_20.jpg"></c:url> "
                  alt="First slide">
+
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Welcome to Le's Music Store</h1>
-                    <p>Here you can brows and buy Instruments, Records and music related Accessories. Order Now for
+
+                    <p>Here you can browse and buy Instruments, Records and music related Accessories. Order Now for
                         Your Amazing New Kit!</p>
+
                 </div>
             </div>
         </div>
         <div class="item">
             <img class="second-slide home-image" src="<c:url value="/resources/images/maxresdefault.jpg"></c:url>"
                  alt="Second slide">
+
             <div class="container">
                 <div class="carousel-caption">
                     <h1>Facts You Should Know About Music</h1>
 
-                    <p>Music brings joy, to all of all of our hearts, It's one of those, emotional arts.</p>
+                    <p>Music brings joy, to all of our hearts, It's one of those, emotional arts.</p>
+
                 </div>
             </div>
         </div>
         <div class="item">
             <img class="third-slide home-image" src="<c:url value="/resources/images/muzika.jpg"></c:url>"
                  alt="Third slide">
+
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>It's S Jazz Affair</h1>
+                    <h1>It's A Jazz Affair</h1>
 
                     <p>Through ups and downs, Somehow I manage to survive in life.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+
                 </div>
             </div>
         </div>
@@ -78,33 +83,32 @@
         </div><!-- /.col-lg-4 -->
 
 
+
         <div class="row">
             <div class="col-lg-4">
-                <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Accessory" />"
+                <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Record" />"
                    role="button">
                     <img class="img-circle" src="<c:url value="/resources/images/foto3.jpg" />" alt="Instrument
                Image" width="140" height="140"></a>
 
-                <h2>Accessories</h2>
-                <p>All musical and related geeky goods.</p>
+                <h2>Discography</h2>
+                <p>An exceptional collections of music records in favor of the traditional and modern genre of jazz.</p>
 
             </div><!-- /.col-lg-4 -->
 
-
             <div class="row">
                 <div class="col-lg-4">
-                    <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Record" />"
+                    <a class="btn btn-default" href="<c:url value="/product/productList?searchCondition=Accessory" />"
                        role="button">
                         <img class="img-circle" src="<c:url value="/resources/images/foto2.jpg" />" alt="Instrument
                Image" width="140" height="140"></a>
 
-                    <h2>Discography</h2>
-                    <p>An exceptional collections of music records in favor of the traditional and modern genre of jazz.
+                    <h2>Accessories</h2>
+                    <p>All musical and related geeky goods..</p>
 
-                    </p></div><!-- /.col-lg-4 -->
+                </div><!-- /.col-lg-4 -->
 
 
             </div><!-- /.row -->
-
 
             <%@include file="/WEB-INF/views/template/footer.jsp" %>
