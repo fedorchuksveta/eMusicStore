@@ -19,11 +19,12 @@ public class CartController {
     private CustomerService customerService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String getCart(@AuthenticationPrincipal User activeUser) {
+    public String getCart(@AuthenticationPrincipal User activeUser, Model model) {
         Customer customer = customerService.getCustomerByUsername(activeUser.getUsername());
         int cartId = customer.getCart().getCartId();
-
-        return "redirect:/customer/cart/" + cartId;
+        model.addAttribute("cartId", cartId);
+        model.addAttribute("cartItems", customer.getCart());
+        return "cart";
     }
 
     @RequestMapping("/{cartId}")
